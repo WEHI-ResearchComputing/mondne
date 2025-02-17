@@ -1,0 +1,32 @@
+[project]
+name = "mondne"
+version = "0.1.0"
+description = "Monday.com GraphQL API client"
+readme = "README.md"
+authors = [
+    { name = "Michael Milton", email = "michael.r.milton@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "graphql-core>=3.2.6",
+    "httpx>=0.28.1",
+    "pydantic>=2.10.6",
+    "websockets>=15.0",
+]
+
+[project.scripts]
+mondne = "mondne:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ariadne-codegen>=0.14.0",
+]
+
+[tool.ariadne-codegen]
+remote_schema_url = "https://api.monday.com/v2/get_schema"
+target_package_name = "mondne"
+enable_custom_operations = true

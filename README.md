@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-pip install
+pip install git+https://github.com/WEHI-ResearchComputing/mondne.git
 ```
 
 ## Usage
